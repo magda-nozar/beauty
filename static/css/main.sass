@@ -1,0 +1,61 @@
+@import partials/switcher
+@import partials/colors
+@import partials/functions
+@import partials/mixins
+
+#beauty-brands
+    padding: 30px
+    border-top: 1px solid #e8e8e8
+
+    .hidden
+        display: none
+
+    .alza-infobox
+        text-align: center
+        border-radius: 4px
+        box-shadow: 0 1px 4px 0px rgba(0,0,0,0.15)
+        @include flexVert
+        align-items: center
+        justify-content: space-between
+        width: calc((100% - 12px * (8 - 1)) / 8)
+
+        &:hover
+            box-shadow: 0 2px 6px 0px rgba(0,0,0,0.15)
+
+        &--container
+            @include flexHor
+            flex-wrap: wrap
+            justify-content: center
+            gap: 12px
+
+        .icon
+            width: 60px
+            height: 40px
+            padding: 24px
+
+// LAYOUT-0
+.layout-0 #beauty-brands
+    padding: 40px 20px
+
+    .alza-infobox
+            width: calc((100% - 12px * (4 - 1)) / 4)
+      
+// MOBILE & APP version
+@media only screen and (max-width: 900px)
+    .mobile #beauty-brands,
+    .mobileapp #beauty-brands
+        border-top: none
+        .alza-infobox
+            width: calc((100% - 12px * (4 - 1)) / 4)
+
+// @media only screen and (max-width: 570px)
+//     .mobile #beauty-brands,
+//     .mobileapp #beauty-brands
+//         .alza-infobox
+//             width: calc((100% - 12px * (4 - 1)) / 4)
+
+@media only screen and (max-width: 450px)
+    .mobile #beauty-brands,
+    .mobileapp #beauty-brands
+        .alza-infobox
+            width: calc((100% - 12px * (2 - 1)) / 2)
